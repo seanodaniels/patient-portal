@@ -7,8 +7,7 @@ const app = express()
 
 import cors from 'cors'
 app.use(cors())
-
-
+app.use(express.static('dist'))
 app.use(express.json())
 
 // const PORT = 3001
