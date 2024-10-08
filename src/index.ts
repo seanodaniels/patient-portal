@@ -6,9 +6,10 @@ import patientorRouter from './routes/patientor'
 const app = express()
 
 import cors from 'cors'
-app.use(express.json())
-
 app.use(cors())
+
+
+app.use(express.json())
 
 // const PORT = 3001
 console.log(`process.env.PORT is ${process.env.PORT}`)
