@@ -1,10 +1,14 @@
+import dotenv from 'dotenv'
+dotenv.config()
 import express from 'express'
 import patientorRouter from './routes/patientor'
 const app = express()
-const cors = require('cors')
+import cors from 'cors'
 app.use(express.json())
 
-const PORT = 3001
+// const PORT = 3001
+console.log(`process.env.PORT is ${process.env.PORT}`)
+const PORT = process.env.PORT || 3001
 
 app.use(cors())
 
@@ -17,5 +21,5 @@ app.get('/api/ping', (_req, res) => {
 app.use('/api', patientorRouter)
 
 app.listen(PORT, () => {
-    console.log(`listening on port ${PORT}`)
+    console.log(`Server running on port ${PORT}`)
 })
