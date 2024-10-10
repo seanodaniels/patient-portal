@@ -8,7 +8,8 @@
     "lint": "eslint --ext .ts .",
     "start": "node build/index.js",
     "build": "npm run tsc",
-    "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../patient-portal-frontend && npm run build && @powershell Copy-Item dist -Recurse ../patient-portal"
+    "vercel-build": "echo hello",
+    "build:ui": "@powershell Remove-Item -Recurse -Force public && mkdir public && cd ../patient-portal-frontend && npm run build && @powershell Copy-Item -Path dist/* -Destination ../patient-portal/public/ -Force -Recurse"
   },
   "author": "",
   "license": "ISC",
